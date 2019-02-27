@@ -1,0 +1,40 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='header.design.css'}"/>
+<p>Configure the link collection Component:</p>
+<div data-sly-use.linkbeanObj="aemAssignment.core.models.CollectionLinkComponentWithoutPresetsComponent">
+
+    <div class="row">
+        <div class="link-collection-box col-lg-12 col-md-12 col-sm-12 col-xs-6">
+            <div class="head"><span> ${linkbeanObj.bean.heading} </span></div>
+            <div class="content-links">
+                <ul class="list-unstyled row">
+                    <div data-sly-list.items="${linkbeanObj.bean.metadataBeanList}">
+                        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <a href="${items.path}" target="_blank">${items.title}</a>
+                            <sly data-sly-test="${items.lastModifiedDate}">
+                                <span class="desc-text">Updated ${items.lastModifiedDate}</span>
+                            </sly>
+                            <!--/*Use span tag if you want to show updated text in same line OR use <P> or <div> in case of next line */-->
+                            <p class="desc-text">
+                                 <sly data-sly-test="${items.shortText}">
+                                   <span class="pdf-short-text"> ${items.shortText}</span>
+                                </sly>
+                                <sly data-sly-test="${items.shortText && items.shortTextForPdf}"><br></sly>
+                               <sly data-sly-test="${items.shortTextForPdf == 'New'}">
+                                   <span class="new-short-text"> ${items.shortTextForPdf} </span>
+                                </sly>
+                                <sly data-sly-test="${items.shortTextForPdf == 'Updated'}">
+                                    <span class="updated-short-text">${items.shortTextForPdf}</span>
+                                </sly>
+                                <sly data-sly-test="${items.shortText && items.shortDescription || items.shortTextForPdf && items.shortTextForPdf || items.shortText}"><br></sly>
+                                <sly data-sly-test="${items.shortDescription}">
+                                    ${items.shortDescription}
+                                </sly>
+                            </p>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

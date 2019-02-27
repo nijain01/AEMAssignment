@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="Link Collection"
+  sling:resourceType="cq/gui/components/authoring/dialog"
+  helppath="en/cq/current/wcm/default_components.html#Carousel">
+  <content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+    <layout
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/tabs"
+      type="nav"/>
+    <items jcr:primaryType="nt:unstructured">
+      <linkcollectionproperties
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Link Collection Properties"
+        sling:resourceType="granite/ui/components/foundation/section">
+        <layout
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+          <column
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <heading
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Enter Heading for the content"
+                fieldLabel="Heading"
+                name="./heading"/>
+              <path
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Select Path"
+                fieldLabel="Path"
+                name="./path"
+                rootPath="/content"/>
+              <!--<shortTextDuration
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                  fieldLabel="Short Text Duration"
+                                  name="./shortTextDuration">
+                              <datasource
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="/apps/AemAssignment/components/datasource/shortTextDurationPresets.html"/>
+                          </shortTextDuration>-->
+              <visibility
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Visibility"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                <layout
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <showLastModifiedDate
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        name="./showLastModifiedDate"
+                        text="Last Modified Date"
+                        uncheckedValue="false"
+                        value="true"/>
+                      <showLastModifiedDateType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./showLastModifiedDate@TypeHint"
+                        value="Boolean"/>
+                      <showShortText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        name="./showShortText"
+                        text="Short Text"
+                        uncheckedValue="false"
+                        value="true"/>
+                      <showShortTextType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./showShortText@TypeHint"
+                        value="Boolean"/>
+                      <showShortDescription
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        name="./showShortDescription"
+                        text="Short Description"
+                        uncheckedValue="false"
+                        value="true"/>
+                      <showShortDescriptionType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./showShortDescription@TypeHint"
+                        value="Boolean"/>
+                    </items>
+                  </column>
+                </items>
+              </visibility>
+              <sorting
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Sorting"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                <layout
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                  <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                    <items jcr:primaryType="nt:unstructured">
+                      <sortByLastModifiedDate
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        name="./sortByLastModifiedDate"
+                        text="Last Modified Date"
+                        uncheckedValue="false"
+                        value="true"/>
+                      <sortByLastModifiedDateType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./sortByLastModifiedDate@TypeHint"
+                        value="Boolean"/>
+                      <sortByTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        defaultChecked="{Boolean}true"
+                        name="./sortByTitle"
+                        text="Title"
+                        uncheckedValue="false"
+                        value="true"/>
+                      <sortByTitleType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./sortByTitle@TypeHint"
+                        value="Boolean"/>
+                    </items>
+                  </column>
+                </items>
+              </sorting>
+            </items>
+          </column>
+        </items>
+      </linkcollectionproperties>
+    </items>
+  </content>
+</jcr:root>
